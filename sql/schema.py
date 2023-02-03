@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, MetaData
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, MetaData, Float
 from sqlalchemy.orm import relationship, declarative_base, sessionmaker
 
 Base = declarative_base()
@@ -22,6 +22,7 @@ class Track(Base):
     TrackId = Column(Integer, primary_key=True)
     Name = Column(String(200))
     AlbumId = Column(ForeignKey('albums.AlbumId'), nullable=True)
+    Length = Column(Float)
 
     def __repr__(self):
         return "Track(TrackId='%s', Name='%s', AlbumId='%s')" % (self.TrackId, self.Name, self.AlbumId)

@@ -40,10 +40,11 @@ class Chinook:
         with self._sessionMaker() as ses:
             return ses.query(Album).all()
 
-    def addTrack(self, name, albumId):
+    def addTrack(self, name, albumId, length):
         with self._sessionMaker() as ses:
             newtrack = Track(Name=name)
             newtrack.AlbumId = albumId
+            newtrack.Length = length
             ses.add(newtrack)
             ses.commit()
             return newtrack.TrackId
