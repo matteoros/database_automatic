@@ -2,7 +2,8 @@ from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, MetaD
 from sqlalchemy.orm import relationship, declarative_base, sessionmaker
 
 from .schema import *
-from .chinook import Chinook
+#from .chinook import Chinook
+from .chinook2 import Chinook
 
 ''' 
 import urllib.request    # needed for download of the example database
